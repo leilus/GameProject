@@ -14,9 +14,9 @@ public class Enemy : MonoBehaviour
         health = maxHealth;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(float amount)
     {
-        health -= 10f;
+        health -= amount;
 
         if(health <= 0)
         {

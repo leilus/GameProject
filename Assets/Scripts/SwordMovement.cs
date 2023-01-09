@@ -7,8 +7,9 @@ public class SwordMovement : MonoBehaviour
     public GameObject Sword;
     public bool canAttack = true;
     public float attackCooldown = 1.5f;
+    
 
-   
+ 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -35,5 +36,19 @@ public class SwordMovement : MonoBehaviour
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }
+
+       void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            
+            Debug.Log("I hit something!");
+        }
+    }
+
+
+
+
+
 
 }
